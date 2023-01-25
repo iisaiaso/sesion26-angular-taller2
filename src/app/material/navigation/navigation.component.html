@@ -1,0 +1,19 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-nav-list>
+        <a class="example-a"  [routerLinkActiveOptions]="{exact : true}" routerLinkActive="bg-red-200" routerLink="">Home</a>
+        <a class="example-a" routerLinkActive="bg-red-200" routerLink="user">User </a>
+      </mat-nav-list>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- router -->
+    <router-outlet></router-outlet>
+    <!-- fin del router -->
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
