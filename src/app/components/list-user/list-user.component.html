@@ -36,10 +36,12 @@
                         {{ user.address.street }}/{{ user.address.suite }}/{{user.address.city}}/{{ user.address.zipcode }}
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <button 
+                      <a routerLink="/home/detalle/{{user.id}}">
+                        <button 
                         class="bg-sky-600 text-white py-1 px-3 rounded-lg"
                         >
                         Ver mas</button>
+                      </a>
                     </td>
                   </tr>
                 </tbody>

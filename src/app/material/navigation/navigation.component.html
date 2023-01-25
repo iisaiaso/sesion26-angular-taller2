@@ -6,7 +6,9 @@
         <a class="example-a" routerLinkActive="text-red-200" routerLink="user">User </a>
       </mat-nav-list>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon">
+      <button 
+      (click)="logOut()"
+      mat-icon-button class="example-icon">
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>

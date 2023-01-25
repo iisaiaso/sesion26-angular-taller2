@@ -1,0 +1,18 @@
+<!-- <p>{{id}},{{userId | json}}</p> -->
+<div class=" mt-5 max-w-md mx-auto">
+ <div class="mx-5 py-2">
+    <div class="text-center w-[95%] mx-auto text-xl font-mono font-semibold mb-3">Detalle de usuario</div>  
+    <div *ngFor="let user of userId">
+      <div class="w-[95%] mx-auto py-5 px-5 font-mono shadow-2xl rounded-xl text-[16px] text-gray-400 bg-blue-200" *ngIf="id == user.id">
+         <p> <strong class="mr-9 text-black">Name:</strong> {{ user.name }}</p>
+         <p> <strong class=" text-black">Username:</strong> {{ user.username }}</p>
+         <p class="flex"> <strong class="mr-4 text-black">Address:</strong> 
+          {{ user.address.street }}/ {{ user.address.suite }}/
+          {{ user.address.city }}/ {{ user.address.zipcode }}
+         </p>
+         <p> <strong class="mr-6 text-black">Phone:</strong> {{ user.phone }}</p>
+         <p> <strong class="mr-2 text-black">Website:</strong> {{ user.website }}</p>
+      </div>
+    </div>
+ </div>
+</div>

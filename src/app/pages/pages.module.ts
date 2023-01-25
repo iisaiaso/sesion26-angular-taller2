@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ComponentsModule } from '../components/components.module';
 import { MainComponent } from './main/main.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 
 
@@ -11,7 +12,8 @@ import { MainComponent } from './main/main.component';
   declarations: [
     HomeComponent,
     UserComponent,
-    MainComponent
+    MainComponent,
+    DetalleComponent
   ],
   imports: [
     CommonModule,
