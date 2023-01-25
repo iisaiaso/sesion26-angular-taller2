@@ -1,1 +1,51 @@
-<p>list-user works!</p>
+
+<div class="w-3/4 auto mx-auto pb-10 pt-5">
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full" #tabla1>
+                <thead class="bg-white border-b">
+                  <tr class="text-center"> 
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
+                      #
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      Name
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      Username
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
+                        Address
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray-100 border-b  hover:bg-gray-200 hover:border-gray-300 hover:border-2 " *ngFor="let user of userList; let i = index">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{i+1}}</td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      {{user.name}}
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        {{ user.username}}
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        {{ user.address.street }}/{{ user.address.suite }}/{{user.address.city}}/{{ user.address.zipcode }}
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <button 
+                        class="bg-sky-600 text-white py-1 px-3 rounded-lg"
+                        >
+                        Ver mas</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

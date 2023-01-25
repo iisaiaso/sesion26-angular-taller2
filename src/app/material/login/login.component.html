@@ -1,0 +1,68 @@
+<div class="bg-slate-400">
+  <div class="example-container w-3/5 mx-auto py-2 flex justify-center items-center min-h-screen">
+    <div class="py-5 px-6 w-96 shadow-2xl bg-white rounded">
+      <h1 class="text-center" >Sign in</h1>
+      <form [formGroup]="formLogin" class="mb-3">
+        <p>
+          <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Enter your username</mat-label>
+            <input 
+            formControlName="username"
+            matInput type="text" >
+            <mat-error *ngIf="formLogin.get('username')?.hasError('required') && formLogin.get('username')?.touched">
+              Username is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </p>
+       <p>
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Enter your password</mat-label>
+          <input 
+          formControlName="password"
+          matInput [type]="hide ? 'password' : 'email'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="formLogin.get('password')?.hasError('required') && formLogin.get('password')?.touched">
+            Password is <strong>required</strong>
+            </mat-error>
+          <mat-error *ngIf="formLogin.get('password')?.hasError('email') && formLogin.get('password')?.touched">
+            Password is invalid
+            </mat-error>
+        </mat-form-field>
+       </p>
+        <button mat-raised-button color="primary" class="w-full py-2 "
+        [disabled]="!formLogin.valid"
+        (click)="onLogin()">
+        Sign in
+      </button>
+      </form>
+      <div 
+      *ngIf="resulset"
+      class="text-xs text-center  shadow-xl flex justify-center items-center">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="error" style="color:rgb(237, 85, 85);"></mat-icon>
+      <div class="ml-2 mt-3">
+        <p class="text-red-400">{{resulset}}
+        </p>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  <!-- <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form> -->
+  
+  

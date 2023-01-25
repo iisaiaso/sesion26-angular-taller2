@@ -18,7 +18,8 @@ import { ListUserComponent } from './list-user/list-user.component';
   imports: [
     CommonModule,
     MaterialModule
-  ], exports:[
+  ],
+  exports: [
     HeaderComponent,
     FooterComponent,
     LoginComponent,
