@@ -5,20 +5,21 @@ import { UserComponent } from './pages/user/user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PermissionsGuard } from './guard/permissions.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   {
     path: 'home', component: HomeComponent,
     children: [
-      { path: '', component: MainComponent},
+      { path: '', component: MainComponent },
       { path: 'user', component: UserComponent },
       { path: 'detalle/:id', component: DetalleComponent },
       { path: '**', pathMatch: 'full', redirectTo: '' }
-      
-    ]
+
+    ], canActivate: [PermissionsGuard]
   },
-  { path: '', pathMatch: 'full', redirectTo: 'login' }
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({

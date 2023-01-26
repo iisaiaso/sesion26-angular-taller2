@@ -33,9 +33,8 @@ export class LoginComponent implements OnInit {
       this.userlogin = res
 
       for (let user of this.userlogin) {
-
         if (user.username == this.formLogin.value.username && user.email == this.formLogin.value.password) {
-          this.router.navigate(['/home'])
+         
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -43,6 +42,8 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1000
           })
+          this.router.navigate(['/home'])
+          localStorage.setItem('logeado', 'true')
         }else{this.resulset='Username and password incorrect'}
       }
     })
